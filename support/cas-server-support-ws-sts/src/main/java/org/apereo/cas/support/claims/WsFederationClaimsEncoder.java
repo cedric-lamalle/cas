@@ -4,6 +4,7 @@ import org.apereo.cas.authentication.ProtocolAttributeEncoder;
 import org.apereo.cas.services.RegisteredService;
 import org.apereo.cas.util.EncodingUtils;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.apache.commons.lang3.StringUtils;
@@ -20,6 +21,7 @@ import java.util.Map;
 @Slf4j
 public class WsFederationClaimsEncoder implements ProtocolAttributeEncoder {
 
+    @SuppressFBWarnings("PSC_SUBOPTIMAL_COLLECTION_SIZING")
     @Override
     public Map<String, Object> encodeAttributes(final Map<String, Object> attributes, final RegisteredService service) {
         val finalAttributes = new HashMap<String, Object>(attributes.size());
